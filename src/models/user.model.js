@@ -16,7 +16,7 @@ const userSchema = new Schema({
     avatar: String,
     coverImage: String,
     password: String,
-    refreshToken: String,
+    refreshToken: String,//refreshToken
 
 
 }, { timestamps: true })
@@ -47,7 +47,7 @@ userSchema.methods.generateAccessToken=function(){
     )
 }
 userSchema.methods.generateRefreshToken=function(){
-    jwt.sign(
+   return jwt.sign(
         {
         _id:this._id
         },
